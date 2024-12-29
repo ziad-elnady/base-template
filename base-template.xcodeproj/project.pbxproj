@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		998DDB672D21614A008B4FD5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB662D21614A008B4FD5 /* Swinject */; };
+		998DDB692D21614A008B4FD5 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB682D21614A008B4FD5 /* Swinject-Dynamic */; };
+		998DDB6C2D2161DF008B4FD5 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		99B768972D17D60400ECA0E7 /* base-template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "base-template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998DDB672D21614A008B4FD5 /* Swinject in Frameworks */,
+				998DDB6C2D2161DF008B4FD5 /* SwinjectStoryboard in Frameworks */,
+				998DDB692D21614A008B4FD5 /* Swinject-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,9 @@
 			);
 			name = "base-template";
 			packageProductDependencies = (
+				998DDB662D21614A008B4FD5 /* Swinject */,
+				998DDB682D21614A008B4FD5 /* Swinject-Dynamic */,
+				998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */,
 			);
 			productName = "base-template";
 			productReference = 99B768972D17D60400ECA0E7 /* base-template.app */;
@@ -107,6 +119,10 @@
 			);
 			mainGroup = 99B7688E2D17D60400ECA0E7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */,
+				998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99B768982D17D60400ECA0E7 /* Products */;
 			projectDirPath = "";
@@ -331,6 +347,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		998DDB662D21614A008B4FD5 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		998DDB682D21614A008B4FD5 /* Swinject-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = "Swinject-Dynamic";
+		};
+		998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
+			productName = SwinjectStoryboard;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99B7688F2D17D60400ECA0E7 /* Project object */;
 }

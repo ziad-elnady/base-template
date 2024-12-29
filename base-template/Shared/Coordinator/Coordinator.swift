@@ -6,7 +6,7 @@
 //
 
 import UIKit
-//import Swinject
+import Swinject
 
 protocol CoordinatorFinishOutput {
     var finishFlow: (() -> Void)? { get set }
@@ -17,8 +17,7 @@ protocol Coordinator {
     /**
         DI container
      */
-//    var container: Container { get }
-    
+    var container: Container { get }
     /**
         Entry point starting the coordinator
      */

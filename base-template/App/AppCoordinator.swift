@@ -5,8 +5,8 @@
 //  Created by Ziad Ahmed on 21/12/2024.
 //
 
-import Foundation
 import UIKit
+import Swinject
 
 enum AppChildCoordinator {
     case auth
@@ -15,10 +15,13 @@ enum AppChildCoordinator {
 
 class AppCoordinator: Coordinator {
     
+    let container: Container
+    
     var childCoordinators = [AppChildCoordinator:Coordinator]()
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController) {
+    init(container: Container, navigationController: UINavigationController) {
+        self.container = container
         self.navigationController = navigationController
     }
     
