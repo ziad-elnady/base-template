@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 class MainCoordinator: Coordinator, CoordinatorFinishOutput {
     
@@ -14,20 +15,22 @@ class MainCoordinator: Coordinator, CoordinatorFinishOutput {
     var finishFlow: (() -> Void)?
     
     // MARK: - Vars & Lets -
+    internal let container: Container
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     // MARK: - Coordinator -
     
-    init(navigationController: UINavigationController) {
+    init(container: Container, navigationController: UINavigationController) {
+        self.container = container
         self.navigationController = navigationController
     }
     
     // MARK: - Coordinator -
     
     func start() {
-        let mainViewController = MainViewController.instantiate()
+        let mainViewController = container.resolveViewController(MainViewController.self)
         
         mainViewController.onLogoutTapped = {
             self.finishFlow?()

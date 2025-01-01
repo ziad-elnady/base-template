@@ -25,11 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         assembler = Assembler([
-            
+            AuthAssembly()
         ], container: container)
         
         let navigationController = UINavigationController()
-        coordinator = AppCoordinator(container: container, navigationController: navigationController)
+        coordinator = AppCoordinator(container: container,
+                                     navigationController: navigationController,
+                                     launchInstructor: LaunchInstructor.configure(isAuthorized: UserService.shared.isAuthenticated()))
         coordinator?.start()
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

@@ -15,31 +15,53 @@ enum AppChildCoordinator {
 
 class AppCoordinator: Coordinator {
     
-    let container: Container
+    // MARK: - Vars & Lets -
     
-    var childCoordinators = [AppChildCoordinator:Coordinator]()
-    var navigationController: UINavigationController
+    internal let container: Container
     
-    init(container: Container, navigationController: UINavigationController) {
+    private let navigationController: UINavigationController
+    private var childCoordinators = [AppChildCoordinator:Coordinator]()
+    private var launchInscructor: LaunchInstructor
+    
+    // MARK: - Init -
+    
+    init(container: Container, navigationController: UINavigationController, launchInstructor: LaunchInstructor) {
         self.container = container
         self.navigationController = navigationController
+        self.launchInscructor = launchInstructor
     }
     
     // MARK: Coordinator
     
     func start() {
-        switch false {
-        case true:
-            runMainFlow()
-        case false:
+        switch launchInscructor {
+        case .auth:
             runAuthFlow()
+        case .main:
+            runMainFlow()
         }
     }
     
     // MARK: Private Methods
     
+    private func runAuthFlow() {
+        let authCoordinator = AuthCoordinator(container: container,
+                                              navigationController: navigationController)
+        
+        authCoordinator.finishFlow = { [unowned self] in
+            self.childCoordinators[.auth] = nil
+            self.launchInscructor = .configure(isAuthorized: UserService.shared.isAuthenticated())
+            self.navigationController.viewControllers.removeAll()
+            self.runMainFlow()
+        }
+        
+        childCoordinators[.auth] = authCoordinator
+        authCoordinator.start()
+    }
+    
     private func runMainFlow() {
-        let mainCoordinator = MainCoordinator(navigationController: navigationController)
+        let mainCoordinator = MainCoordinator(container: container,
+                                              navigationController: navigationController)
         
         mainCoordinator.finishFlow = { [unowned self] in
             self.childCoordinators[.main] = nil
@@ -51,16 +73,4 @@ class AppCoordinator: Coordinator {
         mainCoordinator.start()
     }
     
-    private func runAuthFlow() {
-        let authCoordinator = AuthCoordinator(navigationController: navigationController)
-        
-        authCoordinator.finishFlow = { [unowned self] in
-            self.childCoordinators[.auth] = nil
-            self.navigationController.viewControllers.removeAll()
-            self.runMainFlow()
-        }
-        
-        childCoordinators[.auth] = authCoordinator
-        authCoordinator.start()
-    }
 }

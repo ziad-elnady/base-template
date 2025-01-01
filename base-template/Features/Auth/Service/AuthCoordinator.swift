@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Swinject
 
 final class AuthCoordinator: Coordinator, CoordinatorFinishOutput {
     
@@ -14,6 +15,8 @@ final class AuthCoordinator: Coordinator, CoordinatorFinishOutput {
     var finishFlow: (() -> Void)?
     
     // MARK: - Vars & Lets -
+    
+    internal let container: Container
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -26,14 +29,15 @@ final class AuthCoordinator: Coordinator, CoordinatorFinishOutput {
     
     // MARK: - Init -
     
-    init(navigationController: UINavigationController) {
+    init(container: Container, navigationController: UINavigationController) {
+        self.container = container
         self.navigationController = navigationController
     }
     
     // MARK: - Private Methods -
     
     private func showLoginVC() {
-        let loginVC = LoginViewController.instantiate()
+        let loginVC = container.resolveViewController(LoginViewController.self)
         
         loginVC.onLogin = {
             self.finishFlow?()
@@ -47,16 +51,20 @@ final class AuthCoordinator: Coordinator, CoordinatorFinishOutput {
     }
     
     private func showSignupVC() {
-        let signupVC = SignupViewController.instantiate()
+        let signupVC = container.resolveViewController(SignupViewController.self)
+        
+        signupVC.onBack = { [unowned self] in
+            self.navigationController.dismiss(animated: true)
+        }
         
         signupVC.onSignup = {
             self.finishFlow?()
         }
         
         signupVC.onLogin = {
-            self.navigationController.popViewController(animated: true)
+            self.navigationController.dismiss(animated: true)
         }
         
-        navigationController.pushViewController(signupVC, animated: true)
+        navigationController.present(signupVC, animated: true)
     }
 }

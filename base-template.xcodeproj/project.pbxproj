@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		991066BC2D25110500E4DDAD /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = 991066BB2D25110500E4DDAD /* SwinjectStoryboard */; };
+		991066C22D2520D300E4DDAD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 991066C12D2520D300E4DDAD /* Moya */; };
+		991066C72D2521BD00E4DDAD /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 991066C62D2521BD00E4DDAD /* SwiftyJSON */; };
 		998DDB672D21614A008B4FD5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB662D21614A008B4FD5 /* Swinject */; };
-		998DDB692D21614A008B4FD5 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB682D21614A008B4FD5 /* Swinject-Dynamic */; };
-		998DDB6C2D2161DF008B4FD5 /* SwinjectStoryboard in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,18 +44,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				998DDB672D21614A008B4FD5 /* Swinject in Frameworks */,
-				998DDB6C2D2161DF008B4FD5 /* SwinjectStoryboard in Frameworks */,
-				998DDB692D21614A008B4FD5 /* Swinject-Dynamic in Frameworks */,
+				991066BC2D25110500E4DDAD /* SwinjectStoryboard in Frameworks */,
+				991066C22D2520D300E4DDAD /* Moya in Frameworks */,
+				991066C72D2521BD00E4DDAD /* SwiftyJSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		991066C02D2520D300E4DDAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99B7688E2D17D60400ECA0E7 = {
 			isa = PBXGroup;
 			children = (
 				99B768992D17D60400ECA0E7 /* base-template */,
+				991066C02D2520D300E4DDAD /* Frameworks */,
 				99B768982D17D60400ECA0E7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +98,9 @@
 			name = "base-template";
 			packageProductDependencies = (
 				998DDB662D21614A008B4FD5 /* Swinject */,
-				998DDB682D21614A008B4FD5 /* Swinject-Dynamic */,
-				998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */,
+				991066BB2D25110500E4DDAD /* SwinjectStoryboard */,
+				991066C12D2520D300E4DDAD /* Moya */,
+				991066C62D2521BD00E4DDAD /* SwiftyJSON */,
 			);
 			productName = "base-template";
 			productReference = 99B768972D17D60400ECA0E7 /* base-template.app */;
@@ -121,7 +132,9 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */,
-				998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
+				9987038B2D22ED1C00EB0953 /* XCRemoteSwiftPackageReference "Moya" */,
+				991066BA2D25110500E4DDAD /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
+				991066C52D2521BD00E4DDAD /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99B768982D17D60400ECA0E7 /* Products */;
@@ -161,12 +174,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 842Q2Y29VQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "base-template/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -187,12 +202,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 842Q2Y29VQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "base-template/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,6 +366,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		991066BA2D25110500E4DDAD /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+		991066C52D2521BD00E4DDAD /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
+		9987038B2D22ED1C00EB0953 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -357,31 +398,28 @@
 				minimumVersion = 2.9.1;
 			};
 		};
-		998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/SwinjectStoryboard.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.3;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		991066BB2D25110500E4DDAD /* SwinjectStoryboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991066BA2D25110500E4DDAD /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
+			productName = SwinjectStoryboard;
+		};
+		991066C12D2520D300E4DDAD /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9987038B2D22ED1C00EB0953 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		991066C62D2521BD00E4DDAD /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 991066C52D2521BD00E4DDAD /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		998DDB662D21614A008B4FD5 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		998DDB682D21614A008B4FD5 /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
-		};
-		998DDB6B2D2161DF008B4FD5 /* SwinjectStoryboard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 998DDB6A2D2161DF008B4FD5 /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */;
-			productName = SwinjectStoryboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

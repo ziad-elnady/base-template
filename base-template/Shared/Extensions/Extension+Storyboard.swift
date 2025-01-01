@@ -1,8 +1,8 @@
 //
-//  Storyboarded.swift
+//  Extension+Storyboard.swift
 //  base-template
 //
-//  Created by Ziad Ahmed on 21/12/2024.
+//  Created by Ziad Ahmed on 31/12/2024.
 //
 
 import Foundation
@@ -10,7 +10,8 @@ import UIKit
 
 /*
     MARK: NOTE!
-    Each ViewController must have the same StoryboardID as its Class Name
+        For each ViewController's ClassName must match the StoryboardID
+        (for small projects)
  */
 
 protocol Storyboarded {

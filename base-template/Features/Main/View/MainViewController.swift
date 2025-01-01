@@ -11,7 +11,7 @@ protocol MainViewControllerProtocol {
     var onLogoutTapped: (() -> Void)? { get set }
 }
 
-class MainViewController: UIViewController, MainViewControllerProtocol, Storyboarded {
+class MainViewController: UIViewController, MainViewControllerProtocol, MainStoryboardLoadable {
     
     // MARK: - MainViewControllerProtocol -
     

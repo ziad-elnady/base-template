@@ -13,7 +13,7 @@ protocol SignupViewControllerProtocol {
     var onSignup: (() -> Void)? { get set }
 }
 
-class SignupViewController: UIViewController, SignupViewControllerProtocol, Storyboarded {
+class SignupViewController: UIViewController, SignupViewControllerProtocol, AuthStoryboardLoadable {
     
     var onBack: (() -> Void)?
     var onLogin: (() -> Void)?
