@@ -11,6 +11,7 @@
 		991066C22D2520D300E4DDAD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 991066C12D2520D300E4DDAD /* Moya */; };
 		991066C72D2521BD00E4DDAD /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 991066C62D2521BD00E4DDAD /* SwiftyJSON */; };
 		998DDB672D21614A008B4FD5 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 998DDB662D21614A008B4FD5 /* Swinject */; };
+		99A7C1EB2D256C8B00B7CDB5 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 99A7C1EA2D256C8B00B7CDB5 /* Reachability */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 			files = (
 				998DDB672D21614A008B4FD5 /* Swinject in Frameworks */,
 				991066BC2D25110500E4DDAD /* SwinjectStoryboard in Frameworks */,
+				99A7C1EB2D256C8B00B7CDB5 /* Reachability in Frameworks */,
 				991066C22D2520D300E4DDAD /* Moya in Frameworks */,
 				991066C72D2521BD00E4DDAD /* SwiftyJSON in Frameworks */,
 			);
@@ -101,6 +103,7 @@
 				991066BB2D25110500E4DDAD /* SwinjectStoryboard */,
 				991066C12D2520D300E4DDAD /* Moya */,
 				991066C62D2521BD00E4DDAD /* SwiftyJSON */,
+				99A7C1EA2D256C8B00B7CDB5 /* Reachability */,
 			);
 			productName = "base-template";
 			productReference = 99B768972D17D60400ECA0E7 /* base-template.app */;
@@ -135,6 +138,7 @@
 				9987038B2D22ED1C00EB0953 /* XCRemoteSwiftPackageReference "Moya" */,
 				991066BA2D25110500E4DDAD /* XCRemoteSwiftPackageReference "SwinjectStoryboard" */,
 				991066C52D2521BD00E4DDAD /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				99A7C1E92D256C8B00B7CDB5 /* XCRemoteSwiftPackageReference "Reachability.swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99B768982D17D60400ECA0E7 /* Products */;
@@ -398,6 +402,14 @@
 				minimumVersion = 2.9.1;
 			};
 		};
+		99A7C1E92D256C8B00B7CDB5 /* XCRemoteSwiftPackageReference "Reachability.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +432,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 998DDB652D21614A008B4FD5 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		99A7C1EA2D256C8B00B7CDB5 /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99A7C1E92D256C8B00B7CDB5 /* XCRemoteSwiftPackageReference "Reachability.swift" */;
+			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
