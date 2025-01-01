@@ -18,20 +18,32 @@ class AuthAssembly: Assembly {
         .inObjectScope(.container)
         
         container.register(MoyaProvider<AuthService>.self) { _ in
-            return MoyaProvider<AuthService>(plugins: [
+            MoyaProvider<AuthService>(plugins: [
                 NetworkLoggerPlugin(configuration: .init(formatter: .init(responseData: JSONResponseDataFormatter),
                                                          logOptions: .verbose))
             ])
         }
         .inObjectScope(.container)
         
-        // View controllers
-        container.storyboardInitCompleted(LoginViewController.self) { container, viewController in
-            
+        container.register(LoginViewModel.self) { resolver in
+            let userService = resolver.resolve(UserService.self)!
+            let authService = resolver.resolve(MoyaProvider<AuthService>.self)!
+            return LoginViewModel(userService: userService, authService: authService)
+        }
+        .inObjectScope(.container)
+        
+        container.register(SignupViewModel.self) { resolver in
+            let authService = resolver.resolve(MoyaProvider<AuthService>.self)!
+            return SignupViewModel(authService: authService)
         }
         
-        container.storyboardInitCompleted(SignupViewController.self) { container, viewController in
-            
+        // View controllers
+        container.storyboardInitCompleted(LoginViewController.self) { resolver, loginViewController in
+            loginViewController.loginViewModel = resolver.resolve(LoginViewModel.self)
+        }
+        
+        container.storyboardInitCompleted(SignupViewController.self) { resolver, signupViewController in
+            signupViewController.signupViewModel = resolver.resolve(SignupViewModel.self)
         }
 
     }

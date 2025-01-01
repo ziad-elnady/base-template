@@ -15,14 +15,25 @@ protocol LoginViewControllerProtocol {
 
 class LoginViewController: UIViewController, LoginViewControllerProtocol, AuthStoryboardLoadable {
     
+    // MARK: - LoginViewControllerProtocol -
+    
     var onBack: (() -> Void)?
     var onLogin: (() -> Void)?
     var onSignup: (() -> Void)?
 
+    // MARK: - Vars & Lets -
+    
+    var loginViewModel: LoginViewModel!
+    
+    // MARK: - ViewController Lifecycle -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        login()
     }
+    
+    // MARK: - IBActions -
     
     @IBAction func loginTapped(_ sender: Any) {
         onLogin?()
@@ -30,5 +41,11 @@ class LoginViewController: UIViewController, LoginViewControllerProtocol, AuthSt
     
     @IBAction func signUpTapped(_ sender: Any) {
         onSignup?()
+    }
+    
+    // MARK: - private methods -
+    
+    private func login() {
+        loginViewModel.login()
     }
 }

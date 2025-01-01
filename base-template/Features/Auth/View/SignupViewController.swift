@@ -15,17 +15,34 @@ protocol SignupViewControllerProtocol {
 
 class SignupViewController: UIViewController, SignupViewControllerProtocol, AuthStoryboardLoadable {
     
+    // MARK: - SignupViewControllerProtocol -
+    
     var onBack: (() -> Void)?
     var onLogin: (() -> Void)?
     var onSignup: (() -> Void)?
     
+    // MARK: - Vars & Lets -
+    
+    var signupViewModel: SignupViewModel!
+    
+    // MARK: - ViewController Lifecycle -
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        signup()
     }
+    
+    // MARK: - IBActions -
     
     @IBAction func loginTapped(_ sender: Any) {
         onLogin?()
+    }
+    
+    // MARK: - Private methods -
+    
+    private func signup() {
+        signupViewModel.signup()
     }
 
 }
