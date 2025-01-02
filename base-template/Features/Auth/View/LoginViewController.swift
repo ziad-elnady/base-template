@@ -13,14 +13,20 @@ protocol LoginViewControllerProtocol {
     var onSignup: (() -> Void)? { get set }
 }
 
-class LoginViewController: UIViewController, LoginViewControllerProtocol, AuthStoryboardLoadable {
+class LoginViewController: BaseTableViewController, LoginViewControllerProtocol, AuthStoryboardLoadable {
     
     // MARK: - LoginViewControllerProtocol -
     
     var onBack: (() -> Void)?
     var onLogin: (() -> Void)?
     var onSignup: (() -> Void)?
-
+    
+    // MARK: - Outlets -
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
     // MARK: - Vars & Lets -
     
     var loginViewModel: LoginViewModel!

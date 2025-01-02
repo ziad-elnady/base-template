@@ -13,13 +13,19 @@ protocol SignupViewControllerProtocol {
     var onSignup: (() -> Void)? { get set }
 }
 
-class SignupViewController: UIViewController, SignupViewControllerProtocol, AuthStoryboardLoadable {
+class SignupViewController: BaseTableViewController, SignupViewControllerProtocol, AuthStoryboardLoadable {
     
     // MARK: - SignupViewControllerProtocol -
     
     var onBack: (() -> Void)?
     var onLogin: (() -> Void)?
     var onSignup: (() -> Void)?
+    
+    // MARK: - Outlets -
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     // MARK: - Vars & Lets -
     
@@ -34,6 +40,10 @@ class SignupViewController: UIViewController, SignupViewControllerProtocol, Auth
     }
     
     // MARK: - IBActions -
+    
+    @IBAction func signupTapped(_ sender: Any) {
+        
+    }
     
     @IBAction func loginTapped(_ sender: Any) {
         onLogin?()
